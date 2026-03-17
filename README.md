@@ -1,3 +1,5 @@
+## 🔗 Live Demo  
+[Click here to view](https://kashishsuchak.github.io/Mini-Story-Generator/)
 # ✨ Mini Story Generator
 
 An interactive web application that generates short two-paragraph stories based on user-selected genres.
