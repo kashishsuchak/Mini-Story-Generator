@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Mini Story Generator</title>
+
+<style>
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(120deg,#1f1c2c,#928dab);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:0;
+color:white;
+}
+
+.container{
+
+background:rgba(255,255,255,0.08);
+padding:40px;
+border-radius:20px;
+width:500px;
+backdrop-filter:blur(15px);
+box-shadow:0 10px 40px rgba(0,0,0,0.3);
+text-align:center;
+
+}
+
+h1{
+margin-bottom:10px;
+}
+
+select{
+
+padding:10px;
+border-radius:10px;
+border:none;
+margin-top:10px;
+width:70%;
+
+}
+
+button{
+
+margin-top:15px;
+padding:10px 20px;
+border:none;
+border-radius:25px;
+background:#ff6ec4;
+color:white;
+cursor:pointer;
+font-size:15px;
+transition:0.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.1);
+background:#7873f5;
+
+}
+
+#story{
+
+margin-top:25px;
+text-align:left;
+line-height:1.6;
+font-size:16px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>✨ Mini Story Generator</h1>
+
+<p>Select a genre and generate a story</p>
+
+<select id="genre">
+
+<option value="romance">Romance</option>
+<option value="mystery">Mystery</option>
+<option value="fantasy">Fantasy</option>
+<option value="adventure">Adventure</option>
+<option value="sci-fi">Sci-Fi</option>
+
+</select>
+
+<br>
+
+<button onclick="generateStory()">Generate Story</button>
+
+<div id="story"></div>
+
+</div>
+
+<script>
+
+function generateStory(){
+
+let genre=document.getElementById("genre").value
+
+let stories={
+
+romance:[
+`She noticed him every evening in the quiet corner of the café, always writing in the same notebook. One rainy night, he accidentally left it behind. Curiosity won, and she opened it — every page was filled with poems about a girl who sounded exactly like her.
+
+The next day she returned the notebook, nervous and unsure. He smiled softly and said, “I was hoping you'd read it.” That was the beginning of a love story neither of them had planned, but both had been quietly waiting for.`
+
+],
+
+mystery:[
+
+`The old clock tower had been silent for decades, yet every night at exactly 2:17 AM, the bells rang once. No one knew why. One night, a curious journalist decided to stay inside the tower until morning.
+
+As the clock struck 2:17, a hidden door slowly creaked open behind the gears. Inside was a dusty room filled with letters addressed to people who hadn't even been born yet.`
+
+],
+
+fantasy:[
+
+`Lina always believed the stars were alive, but no one else could hear them whisper. One night, while staring at the sky, she heard her name carried by the wind.
+
+When she followed the voice into the forest, the stars above began to glow brighter. That was the moment she realized the universe had been waiting for her to find her true power.`
+
+],
+
+adventure:[
+
+`The map looked ordinary, except for one detail — the island drawn on it didn’t exist on any real map. Curious and fearless, Maya packed a bag and set out to find it.
+
+After days at sea, thick fog surrounded her boat. When the fog cleared, the mysterious island stood before her, filled with ruins that told stories of a civilization lost to time.`
+
+],
+
+"sci-fi":[
+
+`The message appeared on every screen in the city at exactly midnight: “We have been watching you.” Panic spread quickly, but no one knew where it came from.
+
+Hours later, the satellites above Earth lit up one by one, forming a strange pattern in the sky. It wasn’t a warning — it was an invitation.`
+
+]
+
+}
+
+let genreStories=stories[genre]
+
+let random=Math.floor(Math.random()*genreStories.length)
+
+document.getElementById("story").innerHTML=genreStories[random]
+
+}
+
+</script>
+
+</body>
+
+</html>
